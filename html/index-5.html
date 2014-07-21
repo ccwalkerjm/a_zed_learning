@@ -27,14 +27,15 @@
 
     <script type="text/javascript" src="js/script.js"></script>
     <script>
-        window.onload = function () {
-            if (parent) {
-                var oHead = document.getElementsByTagName("head")[0];
-                var arrStyleSheets = parent.document.getElementsByTagName("style");
-                for (var i = 0; i < arrStyleSheets.length; i++)
-                    oHead.appendChild(arrStyleSheets[i].cloneNode(true));
-            }
-        }
+        $(document).ready(function () {
+            // 
+
+
+        }); //
+        $(window).load(function () {
+            //
+
+        }); //
     </script>
     <!--[if lt IE 8]>
 		<div style='text-align:center'><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg"border="0"alt=""/></a></div>  
@@ -69,7 +70,58 @@
                             <div class="span4">
 
                                 <div class="box1">
-                                    <iframe src="http://primcms.courserv.com/contact" seamless="seamless" frameborder="0"></iframe>
+<<<<<<< HEAD
+                                    <iframe src="http://primcms.courserv.com/contact" seamless="seamless"></iframe>
+=======
+
+                                    <h2>Contact Form</h2>
+
+                                    <div id="note"></div>
+                                    <div id="fields">
+
+                                        <form id="ajax-contact-form" class="form-horizontal" action="MAILTO:info@a2zedlearningcentre.com" method="post" enctype="text/plain">
+
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputName">Your full name:</label>
+                                                <div class="controls">
+                                                    <input class="" type="text" id="inputName" name="name" value="Your full name:" onBlur="if(this.value=='') this.value='Your full name:'" onFocus="if(this.value =='Your full name:' ) this.value=''">
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputEmail">Your email:</label>
+                                                <div class="controls">
+                                                    <input class="" type="text" id="inputEmail" name="email" value="Your email:" onBlur="if(this.value=='') this.value='Your email:'" onFocus="if(this.value =='Your email:' ) this.value=''">
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputPhone">Phone number:</label>
+                                                <div class="controls">
+                                                    <input class="" type="text" id="inputPhone" name="phone" value="Phone number:" onBlur="if(this.value=='') this.value='Phone number:'" onFocus="if(this.value =='Phone number:' ) this.value=''">
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputMessage">Message:</label>
+                                                <div class="controls">
+                                                    <textarea class="" id="inputMessage" name="content" onBlur="if(this.value=='') this.value='Message:'" onFocus="if(this.value =='Message:' ) this.value=''">Message:</textarea>
+                                                </div>
+                                            </div>
+
+                                            <!--div class="control-group capthca">
+                                                <label class="control-label" for="inputCapthca">Capthca:</label>
+                                                <div class="controls">
+                                                    <input class="" type="text" id="inputCapthca" name="capthca" value="Capthca:" onBlur="if(this.value=='') this.value='Capthca:'" onFocus="if(this.value =='Capthca:' ) this.value=''">
+                                                    <img src="captcha/captcha.php">
+                                                </div>
+                                            </div-->
+
+                                            <input type="submit" class="submit" value="Submit" />
+                                        </form>
+                                    </div>
+
+>>>>>>> parent of acddf29... change contact
                                 </div>
 
 
@@ -93,13 +145,13 @@
                                         function init_map() {
                                             var myOptions = {
                                                 zoom: 16,
-                                                center: new google.maps.LatLng(18.008194, -76.796906),
+                                                center: new google.maps.LatLng(18.0023274, -76.79209989999998),
                                                 mapTypeId: google.maps.MapTypeId.ROADMAP
                                             };
                                             map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
                                             marker = new google.maps.Marker({
                                                 map: map,
-                                                position: new google.maps.LatLng(18.008194, -76.796906)
+                                                position: new google.maps.LatLng(18.0023274, -76.79209989999998)
                                             });
                                             infowindow = new google.maps.InfoWindow({
                                                 content: "<b>Holy Childhood Prep School</b><br/>77 Half Way Tree Road<br/> Kingston, Jamaica"
@@ -114,11 +166,11 @@
 
                                 <h3>A-2-Zed Learning Centre</h3>
 
-                                <p>Holy Childhood Prep School
-                                    <br/>77 Half-Way-Tree Road
-                                    <br/>Kingston 10, Jamaica
-                                    <br/>Telephone: +1 876 880 3301
-                                    <br/>E-mail: <a href="mailto:info@a2zedlearningcentre.com" target="_top">info@a2zedlearningcentre.com</a>
+                                <p>
+                                    77 Half-Way-Tree Road
+                                    <br>Kingston 10, Jamaica
+                                    <br>Telephone: +1 876 880 3301
+                                    <br>E-mail: <a href="mailto:info@a2zedlearningcentre.com" target="_top">info@a2zedlearningcentre.com</a>
                                 </p>
 
 
