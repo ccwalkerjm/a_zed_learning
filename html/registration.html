@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>about</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your keywords">
+    <meta name="author" content="Your name">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/bootstrap-responsive.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="js/superfish.js"></script>
+
+    <script type="text/javascript" src="js/jquery.ui.totop.js"></script>
+
+    <script type="text/javascript" src="js/jquery.spritely-0.6.1.js"></script>
+
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#ajax-contact-form").submit(function () {
+                var str = $(this).serialize();
+                //$("#spinner").show();
+                $.ajax({
+                    type: "POST",
+                    url: "http://primcms.courserv.com/contact/register",
+                    data: str,
+                    dataType: 'json',
+                    async: false,
+                    success: function (r) {
+                        $("#spinner").hide();
+                        if (r.isError == 0) // Message Sent? Show the 'Thank You' message and hide the form
+                        {
+                            result = '<div class="notification_ok">Thank you for registering your child with us!<br/>We will contact you shortly.' +
+                                '<br/><a href="#" onclick="freset();return false;">Click to register another child</a></div>';
+                            $("#fields").hide();
+                        } else {
+                            result = r.message;
+                        }
+                        $("#note").html(result);
+                    }
+                });
+                return false;
+            });
+        });
+
+        function freset() {
+            $("#note").html('');
+            document.getElementById('ajax-contact-form').reset();
+            $("#fields").show();
+        };
+    </script>
+    <!--[if lt IE 8]>
+		<div style='text-align:center'><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg"border="0"alt=""/></a></div>  
+	<![endif]-->
+
+    <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>      
+  <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
+<![endif]-->
+</head>
+
+<body class="subpage">
+
+    <div id="clouds1"></div>
+
+    <div id="plane1"></div>
+
+    <div id="main">
+        <div id="inner">
+
+            <div class="top1">
+            </div>
+
+
+            <div class="menu_wrapper">
+            </div>
+
+            <div id="inner2">
+                <div id="content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="span12">
+                                <div class="box1">
+                                    <a class="pull-right" href="pdf/A-ZED%20Learning%20Centre%20Handbook%206.pdf" target="_blank">Download Parent Handbook</a>
+                                    <h2>Registration Form</h2>
+
+                                    <div id="note"></div>
+                                    <div id="fields">
+
+                                        <form id="ajax-contact-form" class="form-horizontal">
+
+
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputName">Parent/Guardian Name:</label>
+                                                <div class="controls">
+                                                    <input class="" type="text" id="inputName" name="ParentName" placeholder="ParentName">
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputEmail">Parent/Guardian Email:</label>
+                                                <div class="controls">
+                                                    <input class="" type="text" id="inputEmail" name="email" placeholder="Email" />
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputPhone">Parent/Guardian Phone:</label>
+                                                <div class="controls">
+                                                    <input class="" type="text" id="inputPhone" name="phone" placeholder="Phone" />
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="studentName">Child's Name:</label>
+                                                <div class="controls">
+                                                    <input class="" type="text" id="studentName" name="studentName" placeholder="Student Name" />
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label" for="studentAge">Child's Age:</label>
+                                                <div class="controls">
+                                                    <input class="" type="text" id="studentAge" name="studentAge" placeholder="Student Age" />
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputRemarks">remarks:</label>
+                                                <div class="controls">
+                                                    <textarea class="" id="inputRemarks" name="content" placeholder="remarks">Remarks:</textarea>
+                                                </div>
+                                            </div>
+
+
+
+                                            <!--div class="control-group capthca">
+                                                <div class="span2"> <p>" for="inputCapthca">Capthca:</p></div>
+                                                <div class="controls">
+                                                    <input class="" type="text" id="inputCapthca" name="capthca" value="Capthca:" onBlur="if(this.value=='') this.value='Capthca:'" onFocus="if(this.value =='Capthca:' ) this.value=''">
+                                                    <img src="captcha/captcha.php">
+                                                </div>
+                                            </div-->
+                                            <div id="spinner" style="display:none">Please wait. Sending Information....</div>
+                                            <div class="row">
+                                                <div class="span3 offset2">
+                                                    <input type="submit" class="submit" value="Submit" />
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bot1">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $(".top1").load("top.html");
+
+            $(".menu_wrapper").load("menu.html", function () {
+                $(this).find(".container a[href$='" + getPageName() + "']").parent().addClass("active");
+            })
+
+
+            $(".bot1").load("bot.html", function () {
+                $(this).find(".container a[href$='" + getPageName() + "']").parent().addClass("active");
+            })
+
+            function getPageName() {
+                var url = window.location.pathname;
+                var index = url.lastIndexOf(" / ") + 2;
+                return url.substr(index);
+            }
+        });
+    </script>
+</body>
+
+</html>

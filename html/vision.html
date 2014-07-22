@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>about</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your keywords">
+    <meta name="author" content="Your name">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/bootstrap-responsive.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="js/superfish.js"></script>
+
+    <script type="text/javascript" src="js/jquery.ui.totop.js"></script>
+
+    <script type="text/javascript" src="js/jquery.spritely-0.6.1.js"></script>
+
+    <script type="text/javascript" src="js/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 
+
+
+        }); //
+        $(window).load(function () {
+            //
+
+        }); //
+    </script>
+    <!--[if lt IE 8]>
+		<div style='text-align:center'><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg"border="0"alt=""/></a></div>  
+	<![endif]-->
+
+    <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>      
+  <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
+<![endif]-->
+</head>
+
+<body class="subpage">
+
+    <div id="clouds1"></div>
+
+    <div id="plane1"></div>
+
+    <div id="main">
+        <div id="inner">
+
+            <div class="top1">
+            </div>
+
+
+            <div class="menu_wrapper">
+            </div>
+
+            <div id="inner2">
+                <div id="content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="span12">
+
+                                <h1>Vision and Mission</h1>
+
+                                <h2>Vision</h2>
+                                <p>To provide innovative learning solutions that are congruent with current best practice and principles, in partnership with families and which contributes significantly to the holistic development of children.</p>
+
+
+
+
+
+                                <h2>Mission</h2>
+
+
+                                <p>A 2 Zed Learning Centre is committed to the provision of quality innovative learning solutions, that can be measured in terms of education concept, practice, curricula quality, interactions with teachers and students and meeting the needs of families and local communities. A 2 Zed Learning Centre will continue to develop programmes that reflect:</p>
+                                <ol>
+                                    <li>
+                                        Holistic development for children</li>
+                                    <li>
+                                        A sense of belonging</li>
+                                    <li>
+                                        Lifelong skills building and the outcomes required to enhance children’s learning , including transition to higher learning
+
+                                    </li>
+                                </ol>
+                                <h3>
+                                    Seven Guiding Principles.</h3>
+                                <ol>
+                                    <li>
+                                        Holistic development of the child (socially, emotionally, physical, cognitively)</li>
+                                    <li>
+                                        Active (Participative) learning (thinking, investigating, experimenting, discovering and responding)</li>
+                                    <li>
+                                        Interactive learning</li>
+                                    <li>
+                                        Integrated learning</li>
+                                    <li>
+                                        Play as an important aspect of learning</li>
+                                    <li>
+                                        Measurement and Assessment of children’s learning</li>
+                                    <li>
+                                        Building collaborations between the school and home for supportive learning
+                                    </li>
+                                </ol>
+
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bot1">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $(".top1").load("top.html");
+
+            $(".menu_wrapper").load("menu.html", function () {
+                $(this).find(".container a[href$='" + getPageName() + "']").parent().addClass("active");
+            })
+
+
+            $(".bot1").load("bot.html", function () {
+                $(this).find(".container a[href$='" + getPageName() + "']").parent().addClass("active");
+            })
+
+            function getPageName() {
+                var url = window.location.pathname;
+                var index = url.lastIndexOf(" / ") + 2;
+                return url.substr(index);
+            }
+        });
+    </script>
+</body>
+
+</html>
