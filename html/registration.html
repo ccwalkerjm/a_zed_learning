@@ -36,10 +36,10 @@
                     dataType: 'json',
                     async: false,
                     success: function (r) {
-                        $("#spinner").hide();
                         if (r.isError == 0) // Message Sent? Show the 'Thank You' message and hide the form
                         {
                             result = '<div class="notification_ok">Thank you for registering your child with us!<br/>We will contact you shortly.' +
+                                '<br/><a href="pdf/A-ZED%20Learning%20Centre%20Handbook%206.pdf" target="_blank">Click to Download our Handbook</a>' +
                                 '<br/><a href="#" onclick="freset();return false;">Click to register another child</a></div>';
                             $("#fields").hide();
                         } else {
@@ -89,73 +89,88 @@
                     <div class="container">
                         <div class="row">
                             <div class="span6">
-                                <div class="box1 ">
-                                    <a class="pull-right " href="pdf/A-ZED%20Learning%20Centre%20Handbook%206.pdf " target="_blank ">Download Parent Handbook</a>
+                                <div class="box1">
+                                    <!--a class="pull-right " href="pdf/A-ZED%20Learning%20Centre%20Handbook%206.pdf " target="_blank">Download Parent Handbook</a-->
                                     <h2>Registration Form</h2>
 
-                                    <div id="note "></div>
-                                    <div id="fields ">
+                                    <div id="note"></div>
+                                    <div id="fields">
 
-                                        <form id="ajax-contact-form " class="form-horizontal ">
+                                        <form id="ajax-contact-form" class="form-horizontal">
 
 
-                                            <div class="control-group ">
-                                                <label class="control-label " for="inputName ">Parent/Guardian Name:</label>
-                                                <div class="controls ">
-                                                    <input class=" " type="text " id="inputName " name="ParentName " placeholder="ParentName ">
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputName">Parent/Guardian Name:</label>
+                                                <div class="controls">
+                                                    <input class=" " type="text" id="inputName" name="ParentName" placeholder="ParentName" />
                                                 </div>
                                             </div>
 
-                                            <div class="control-group ">
-                                                <label class="control-label " for="inputEmail ">Parent/Guardian Email:</label>
-                                                <div class="controls ">
-                                                    <input class=" " type="text " id="inputEmail " name="email " placeholder="Email " />
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputEmail">Parent/Guardian Email:</label>
+                                                <div class="controls">
+                                                    <input class=" " type="text" id="inputEmail" name="email" placeholder="Email" />
                                                 </div>
                                             </div>
 
-                                            <div class="control-group ">
-                                                <label class="control-label " for="inputPhone ">Parent/Guardian Phone:</label>
-                                                <div class="controls ">
-                                                    <input class=" " type="text " id="inputPhone " name="phone " placeholder="Phone " />
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputPhone">Parent/Guardian Phone:</label>
+                                                <div class="controls">
+                                                    <input class=" " type="text" id="inputPhone" name="phone" placeholder="Phone" />
                                                 </div>
                                             </div>
-                                            <div class="control-group ">
-                                                <label class="control-label " for="studentName ">Child's Name:</label>
-                                                <div class="controls ">
-                                                    <input class=" " type="text " id="studentName " name="studentName " placeholder="Student Name " />
-                                                </div>
-                                            </div>
-
-                                            <div class="control-group ">
-                                                <label class="control-label " for="studentAge ">Child's Age:</label>
-                                                <div class="controls ">
-                                                    <input class=" " type="text " id="studentAge " name="studentAge " placeholder="Student Age " />
+                                            <div class="control-group">
+                                                <label class="control-label" for="studentName">Child's Name:</label>
+                                                <div class="controls">
+                                                    <input class=" " type="text" id="studentName" name="studentName" placeholder="Student Name" />
                                                 </div>
                                             </div>
 
-                                            <div class="control-group ">
-                                                <label class="control-label " for="inputRemarks ">remarks:</label>
-                                                <div class="controls ">
-                                                    <textarea class=" " id="inputRemarks " name="content " placeholder="remarks ">Remarks:</textarea>
+                                            <span>Gender</span>
+                                            <div class="control-group">
+                                                <label class="control-label" for="gender">Child's Age:</label>
+                                                <div class="controls">
+                                                    <select id="gender" name="gender">
+                                                        <option value="female">Female</option>
+                                                        <option value="male">Male</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <span>Student Age</span>
+                                            <div class="control-group">
+                                                <label class="control-label" for="studentAge">Child's Age:</label>
+                                                <div class="controls">
+                                                    <select id="studentAge" name="studentAge">
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputRemarks">remarks:</label>
+                                                <div class="controls">
+                                                    <textarea class=" " id="inputRemarks" name="remarks" placeholder="remarks"></textarea>
                                                 </div>
                                             </div>
 
 
 
-                                            <!--div class="control-group capthca ">
-                                                <div class="span2 "> <p>" for="inputCapthca">Capthca:</p>
+                                            <!--div class="control-group capthca">
+                                                <div class="span2"> <p>" for="inputCapthca">Capthca:</p>
                             </div>
                             <div class="controls">
                                 <input class="" type="text" id="inputCapthca" name="capthca" value="Capthca:" onBlur="if(this.value=='') this.value='Capthca:'" onFocus="if(this.value =='Capthca:' ) this.value=''">
                                 <img src="captcha/captcha.php">
                             </div>
                             </div-->
-                                            <div id="spinner" style="display:none">Please wait. Sending Information....</div>
-                                            <div class="row">
-                                                <div class="span3 offset2">
-                                                    <input type="submit" class="submit" value="Submit" />
-                                                </div>
-                                            </div>
+
+                                            <p>
+                                                <input type="submit" class="submit" value="Submit" />
+                                            </p>
 
                                         </form>
                                     </div>
