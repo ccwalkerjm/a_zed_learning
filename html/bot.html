@@ -21,10 +21,19 @@
                         </ul>
                     </div>
                     <div class="search-form-wrapper clearfix">
-                        <form id="search-form" action="search.php" method="GET" accept-charset="utf-8" class="navbar-form">
-                            <input type="text" name="s" value='Search' onBlur="if(this.value=='') this.value='Search'" onFocus="if(this.value =='Search' ) this.value=''">
-                            <a href="#" onClick="document.getElementById('search-form').submit()"></a>
-                        </form>
+                        <script>
+                            (function () {
+                                var cx = '014882334778718772208:int_hd1065q';
+                                var gcse = document.createElement('script');
+                                gcse.type = 'text/javascript';
+                                gcse.async = true;
+                                gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                                    '//www.google.com/cse/cse.js?cx=' + cx;
+                                var s = document.getElementsByTagName('script')[0];
+                                s.parentNode.insertBefore(gcse, s);
+                            })();
+                        </script>
+                        <gcse:search></gcse:search>
                     </div>
                 </div>
 
